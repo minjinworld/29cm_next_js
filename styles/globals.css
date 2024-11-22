@@ -1,0 +1,503 @@
+@import url("https://fonts.cdnfonts.com/css/campton");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Campton", "pretendard", sans-serif;
+}
+
+body {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; */
+  margin-top: 100px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+ol,
+ul,
+li {
+  list-style: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: inherit;
+  color: inherit;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ------------------------------------------ */
+/* _document.js */
+.header_area {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+
+  width: 100%;
+  height: 210px;
+
+  padding: 2.5rem 3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+}
+
+.marginbox {
+  margin-top: 250px;
+}
+
+.header_area .top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 60px;
+  height: 16px;
+}
+
+.header_area .user_box {
+  display: flex;
+}
+
+.user_nav {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.user_icon {
+  width: 18px;
+  height: 18px;
+}
+
+.user_nav span {
+  margin: 0 16px 0 4px;
+  letter-spacing: 0.3px;
+  font-weight: 500;
+  font-size: 10px;
+  color: #1a1a1e;
+  margin-top: 3px;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.none {
+  display: none;
+}
+
+.center .headtext {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.bottom .tab {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.bottom .tab_list {
+  font-size: 16px;
+  color: #1a1a1e;
+  font-weight: 800;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+/* ------------------------------------------ */
+/* header scroll event */
+.header_area.scroll{
+  height: 120px;
+  border-bottom: 1px solid #dbdbdb;
+  padding-bottom: 12px;
+}
+.header_area.scroll .center{
+  display: none;
+}
+
+
+/* ------------------------------------------ */
+/* .out_box  */
+.flex_box {
+  display: flex;
+  max-width: 62vw;
+  margin: 0 auto;
+  font-weight: 400;
+
+  /* 카운터 초기화 */
+  counter-reset: list-number;
+}
+
+.out_box {
+  font-size: 12px;
+  line-height: 1.4;
+  margin-right: 12px;
+  width: calc(33.333% - 12px);
+}
+
+.out_box .img_box {
+  width: 100%;
+  /* height: 400px; */
+
+  position: relative;
+}
+
+.out_box .img_box::before {
+  pointer-events: none;
+  content: counter(list-number);
+  counter-increment: list-number 1;
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 46px;
+  height: 46px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 46px;
+  color: white;
+  letter-spacing: 1px;
+  background-color: rgb(0, 0, 0);
+}
+
+.out_box .text_content {
+  padding: 16px 0px 12px;
+}
+
+.out_box .brand_name {
+  margin-bottom: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #222;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.out_box .product_name {
+  font-size: inherit;
+  font-weight: 500;
+}
+
+.out_box .text_center {
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.out_box .price {
+  line-height: 1;
+  font-size: 11px;
+  font-weight: normal;
+  color: rgb(196, 196, 196);
+  text-decoration: line-through;
+  display: block;
+}
+
+.out_box .discount {
+  margin-right: 5px;
+  color: rgb(255, 72, 0);
+}
+
+.out_box .discount_price {
+  font-weight: 600;
+  color: #000;
+}
+
+.out_box .coupon {
+  display: block;
+  padding: 2px 6px;
+  font-size: 10px;
+  font-weight: 500;
+  color: rgb(118, 118, 118);
+  background-color: rgb(244, 244, 244);
+  border-radius: 1px;
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.out_box .text_bottom {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+  font-size: 11px;
+  color: rgb(93, 93, 93);
+}
+
+.out_box .text_bottom button {
+  width: 58px;
+  display: flex;
+  align-items: center;
+}
+
+.out_box .text_bottom svg {
+  margin-right: 4px;
+}
+
+.out_box .text_bottom svg path {
+  fill: none;
+  stroke: rgb(93, 93, 93);
+}
+
+.out_box .icon svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* ----------------------------------- */
+/* order pages */
+.order {
+  min-width: 900px;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 40px 50px 0;
+}
+
+.order .brandinfo {
+  display: flex;
+
+  margin-bottom: 16px;
+}
+
+.order .infoImage {
+  width: 74px;
+  height: 74px;
+
+  margin-right: 14px;
+}
+
+.order .infoText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.order .brandName {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.order .explain {
+  font-size: 13px;
+}
+
+.order .brandHome {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 11px;
+  text-transform: uppercase;
+  padding: 4px 9px;
+  border: 1px solid #d4d4d4;
+  border-radius: 4px;
+  margin-top: 6px;
+}
+
+.order .productbox {
+  display: flex;
+  margin-right: -45px;
+}
+
+.order .productbox .product {
+  margin-right: 45px;
+  width: calc(50% - 45px);
+}
+
+.order .productImage {
+  width: 564px;
+  height: 564px;
+}
+
+.order .nameLike {
+  display: flex;
+  justify-content: space-between;
+}
+
+.order .protop {
+  border-top: 2px solid #000000;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.order .proname {
+  display: block;
+  padding: 24px 0px;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.order .heartbox {
+  width: 85px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid #e4e4e4;
+  cursor: pointer;
+}
+
+.order .heartbox svg {
+  width: 40px;
+  height: 26px;
+}
+
+.order .reviewBox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.order .star {
+  display: flex;
+}
+
+.order .star svg {
+  margin-right: 2px;
+}
+
+.order .starText {
+  font-size: 11px;
+  color: rgb(93, 93, 93);
+  border-bottom: 0.5px solid rgb(93, 93, 93);
+  display: inline-block;
+  line-height: normal;
+  margin-left: 12px;
+}
+
+.order .priceBox{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.order .discount{
+  color: rgb(255, 72, 0);
+  font-size: 20px;
+  margin-right: 8px;
+  font-weight: 700;
+}
+
+.order .discountprice{
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.order .originalprice{
+  color: #a0a0a0;
+  font-weight: 500;
+  font-size: 13px;
+  text-decoration: line-through;
+}
+
+
+.order .coupon {
+  display: block;
+  padding: 0px 6px;
+  font-size: 10px;
+  font-weight: 500;
+  background-color: rgb(29, 29, 29);
+  color: rgb(244, 244, 244);
+  border-radius: 1px;
+  display: flex;
+  width: 97px;
+  height: 32px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px 0 14px;
+}
+
+.order .coupon svg {
+  width: 12px;
+  height: 12px;
+}
+
+.order .packingInfo{
+  margin: 20px 0;
+}
+
+.order .packingFlex{
+  margin-bottom: 16px;
+  display: flex;
+}
+
+.order .packingFlex .category{
+  display: block;
+  width: 110px;
+  font-weight: 500;
+}
+
+.order .packingFlex span{
+  color: #474747;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.order .buybtnBox{
+  display: flex;
+
+  margin-top: 16px;
+}
+
+.order .buybtn{
+  width: 50%;
+  height: 50px;
+  border: 1px solid #d4d4d4;
+  font-size: 14px;
+  font-weight: 600;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.order .buybtn.buyingbtn{
+  border-color: #000;
+  background-color: #000;
+  color: #fff;
+  box-shadow: 10px 10px 16px 0 rgb(0 0 0 / 30%);
+}
+
+.order .buybtn.buyingbtn:hover{
+  background-color: #ff4800;
+  border-color: #ff4800;
+}
+
+.order .countbox .countui{
+  width: 36px;
+  height: 36px;
+  border: 1px solid #d4d4d4;
+}
+
+@media (max-width: 1000px) {
+  .center .headtext {
+    font-size: 30px;
+    font-weight: 700;
+  }
+}
